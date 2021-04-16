@@ -93,7 +93,7 @@ DATABASES = {
 '''
 DATABASES = {
     'default': {
-        'ENGINE': 'django.contrib.gis.db.backends.postgis',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'ddou4e6vc7u7np',
         'USER': 'wdpbllqvdrtlej',
         'PASSWORD': 'eb2ca5c6b99a552d7ded255e152db587aead5f392911bbc529ee5f103bdca0de',
