@@ -1,18 +1,21 @@
 
 from rest_framework import serializers
-from .models import form_field_model, primerx_field_model
+from .models import form_field_model, Patient_model, Patient_address_model
 class FormSerializer(serializers.ModelSerializer):
     class Meta:
         model = form_field_model
-        fields = ['id','first_name','lst_name', 'middle_name', 'suffix_form', 'prefix_form', 'Home_number',
-                    'work_number', 'Social_security_num', 'education', 'address_street', 'address_city', 
-                    'address_state', 'address_zip', 'emergency_phone', 'emergency_name', 'emergency_relation',
-                    'sex', 'date_of_date', 'employee_signature']
+        fields = ['id', 'form_id']
 
-class PrimerxSerializer(serializers.ModelSerializer):
+
+class PatientSerializer(serializers.ModelSerializer):
     class Meta:
-        model = primerx_field_model
-        fields = ['id','prime_first_name','prime_lst_name', 'prime_middle_name', 'prime_suffix_form', 'prime_prefix_form',
-                    'prime_work_number', 'prime_Social_security_num', 'prime_education', 'prime_address_street', 'prime_address_city', 
-                    'prime_address_state', 'prime_emergency_phone', 'prime_emergency_name', 'prime_emergency_relation',
-                    'prime_sex' ]
+        model = Patient_model
+        fields = ['prime_patient_id','prime_first_name','prime_lst_name', 'prime_middle_name', 'prime_suffix_form', 'prime_prefix_form', 'Home_number',
+                    'prime_work_number', 'prime_Social_security_num', 'prime_education', 'prime_emergency_phone', 'prime_emergency_name', 'prime_emergency_relation',
+                    'prime_sex', 'date_of_birth', 'employee_signature', 'alter_phone', 'alter_name', 'alter_relation']
+
+class AddressSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Patient_address_model
+        fields = ['prime_address_id', 'prime_address_street', 'address_street2', 'prime_address_city', 
+                    'prime_address_state',]

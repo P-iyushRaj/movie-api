@@ -90,7 +90,7 @@ only allow this domain for CORS(Cross-Origin Resource Sharing)
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-'''
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -113,7 +113,7 @@ DATABASES = {
     }
 }
 
-
+'''
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
