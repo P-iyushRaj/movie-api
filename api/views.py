@@ -25,7 +25,7 @@ class formListCreate(APIView):
             serializer_add.is_valid()
             serializer_add.save()        
 
-        df = pd.read_excel (r'/Users/piyushraj/Desktop/pdfoverlap/movie-api/movie-api/check_form.xlsx', engine='openpyxl')
+        df = pd.read_excel (r'./check_form.xlsx', engine='openpyxl')
         required_field = df.loc[df['form_id_01'] == 'yes']
         required_field_name = required_field['field_name'].values.tolist()
 
