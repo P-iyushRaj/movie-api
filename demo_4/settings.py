@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'api',
     'rest_framework',
     'phonenumber_field',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -53,6 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'demo_4.urls'
@@ -75,7 +77,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'demo_4.wsgi.application'
 
+CORS_ORIGIN_ALLOW_ALL = True
 
+'''
+or
+CORS_ORIGIN_ALLOW_ALL = False
+CORS_ORIGIN_WHITELIST = (
+  'http://localhost:8000',
+)
+only allow this domain for CORS(Cross-Origin Resource Sharing)
+'''
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
